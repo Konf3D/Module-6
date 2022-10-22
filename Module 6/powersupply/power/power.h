@@ -15,12 +15,13 @@ private:
 public:
 	PowerSupplySpecifications() = delete;
 	PowerSupplySpecifications(PowerType currentType, double currentVoltage, double currentAmperage);
-	virtual ~PowerSupplySpecifications();
+	virtual ~PowerSupplySpecifications() = default;
 
 public:
 	PowerType getCurrentType() const;
 	double getCurrentVoltage() const;
 	double getCurrentAmperage() const;
+	friend std::ostream& operator<<(std::ostream& os,const PowerSupplySpecifications& lhs);
 };
 
 class PowerSupply
@@ -30,6 +31,7 @@ private:
 	PowerSupplySpecifications _output;
 public:
 	PowerSupply() = delete;
-	PowerSupply(const PowerSupplySpecifications input, const PowerSupplySpecifications output);
+	PowerSupply(const PowerSupplySpecifications& input, const PowerSupplySpecifications& output);
+	virtual ~PowerSupply() = default;
 	virtual void displaySpecifications() const = 0;
 };
