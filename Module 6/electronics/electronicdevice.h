@@ -1,4 +1,4 @@
 #pragma once
+#include "../iParams/iParams.h"
 #include "powersupply/powersupply.h"
-#include "mixer/mixer.h"
 #include "phone/phone.h"

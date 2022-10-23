@@ -1,6 +1,6 @@
 #include "power.h"
 #include <iostream>
-PowerSupplySpecifications::PowerSupplySpecifications(PowerType currentType, double currentVoltage, double currentAmperage)
+PowerSupplySpecifications::PowerSupplySpecifications(const PowerType currentType, const double currentVoltage, const double currentAmperage)
 	:_currentType(currentType), _currentVoltage(currentVoltage),_currentAmperage(currentAmperage)
 {
 }
@@ -27,12 +27,13 @@ PowerSupply::PowerSupply(const PowerSupplySpecifications& input, const PowerSupp
 
 std::ostream& operator<<(std::ostream& os, const PowerSupplySpecifications& lhs)
 {
-	os << "\nCurrent Type = " << ((lhs._currentType == PowerType::AC) ? "AC\n" : "DC\n") << "Current Voltage = " << lhs._currentVoltage << "\nCurrentApmerage = " << lhs._currentAmperage << '\n';
+	os << "Displaying a power supply parameters\n" << "\nCurrent Type = " << ((lhs._currentType == PowerType::AC) ? "AC\n" : "DC\n") << "Current Voltage = " << lhs._currentVoltage << "\nCurrentApmerage = " << lhs._currentAmperage;
+	return os;
 }
 
 void PowerSupply::displaySpecifications() const
 {
-	std::cout << _input << _output;
+	std::cout << std::endl << _input << std::endl << _output << std::endl;
 }
 
 PowerSupplySpecifications PowerSupply::getInputSpecifications() const
@@ -43,5 +44,17 @@ PowerSupplySpecifications PowerSupply::getInputSpecifications() const
 PowerSupplySpecifications PowerSupply::getOutputSpecifications() const
 {
 	return _output;
+}
+
+void Battery::addCharge(const double charge)
+{
+	_chargePercentage += charge;
+	if (_chargePercentage > 100)
+		_chargePercentage = 100;
+}
+
+double Battery::getCharge() const
+{
+	return _chargePercentage;
 }
 

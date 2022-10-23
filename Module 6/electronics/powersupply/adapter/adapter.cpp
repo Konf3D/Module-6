@@ -1,20 +1,19 @@
 #include "adapter.h"
 #include <iostream>
 
-ACAdapter::ACAdapter(PowerSupplySpecifications& input, PowerSupplySpecifications& output, std::string& manufacturer, std::string& modelname)
+ACAdapter::ACAdapter(const PowerSupplySpecifications& input, const PowerSupplySpecifications& output, const std::string& manufacturer, const std::string& modelname)
 	:PowerSupply(input,output),_manufacturer(manufacturer),_modelName(modelname)
 {
 }
 
-ACAdapter::ACAdapter(PowerSupply& powerSupplyUnit, std::string& manufacturer, std::string& modelName)
+ACAdapter::ACAdapter(const PowerSupply& powerSupplyUnit, const std::string& manufacturer, const std::string& modelName)
 	:PowerSupply(powerSupplyUnit),_manufacturer(manufacturer),_modelName(modelName)
 {
 }
 
 void ACAdapter::displaySpecifications() const
 {
-	std::cout << "Manufacturer = " << _manufacturer << "\nModel = " << _modelName << "\nSerial Number = " << _serialNumber << '\n';
-	PowerSupply::displaySpecifications();
+	std::cout << "Displaying the adapter parameters\n" << "Manufacturer = " << _manufacturer << "\nModel = " << _modelName << '\n';
 }
 
 std::string ACAdapter::getManufacturerName() const
@@ -27,7 +26,3 @@ std::string ACAdapter::getModelName() const
 	return _modelName;
 }
 
-int64_t ACAdapter::getSerialNumber() const
-{
-	return _serialNumber;
-}
