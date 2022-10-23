@@ -35,3 +35,13 @@ void PowerSupply::displaySpecifications() const
 	std::cout << _input << _output;
 }
 
+PowerSupplySpecifications PowerSupply::getInputSpecifications() const
+{
+	return _input;
+}
+
+PowerSupplySpecifications PowerSupply::getOutputSpecifications() const
+{
+	return _output;
+}
+

@@ -18,18 +18,36 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="powersupply\power\power.cpp">
+    <ClCompile Include="electronics\powersupply\power\power.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="powersupply\adapter\adapter.cpp">
+    <ClCompile Include="electronics\powersupply\adapter\adapter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="electronics\mixer\mixer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="electronics\phone\phone.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="powersupply\power\power.h">
+    <ClInclude Include="electronics\powersupply\power\power.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="powersupply\adapter\adapter.h">
+    <ClInclude Include="electronics\powersupply\adapter\adapter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="electronics\electronicdevice.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="electronics\phone\phone.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="electronics\mixer\mixer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="electronics\powersupply\powersupply.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

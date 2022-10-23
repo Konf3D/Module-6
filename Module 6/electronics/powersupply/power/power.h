@@ -32,6 +32,9 @@ private:
 public:
 	PowerSupply() = delete;
 	PowerSupply(const PowerSupplySpecifications& input, const PowerSupplySpecifications& output);
+public:
 	virtual ~PowerSupply() = default;
-	virtual void displaySpecifications() const = 0;
+	virtual void displaySpecifications() const;
+	PowerSupplySpecifications getInputSpecifications() const;
+	PowerSupplySpecifications getOutputSpecifications() const;
 };

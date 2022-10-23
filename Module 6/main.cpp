@@ -1,7 +1,6 @@
 #include <iostream>
-#include "powersupply/adapter/adapter.h"
-
+#include "electronics/electronicdevice.h"
 int main()
 {
-	//ACAdapter adapter
+
 }
